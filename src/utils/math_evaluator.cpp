@@ -1,8 +1,9 @@
 #include "include/math_evaluator.h"
 
-#include "include/symbol_table.h"
-#include "include/tokenizer.h"
-#include "include/parser.h"
+#include "core/symbol_table.h"
+#include "core/tokenizer.h"
+#include "core/parser.h"
+#include "core/evaluator.h"
 
 MathEvaluator::MathEvaluator(const std::string& Input)
 {
@@ -29,6 +30,9 @@ MathEvaluator::MathEvaluator(const std::string& Input)
 	Parser parser(tokenizer);
 	mEvaluator.reset(new Evaluator(parser));
 }
+
+MathEvaluator::~MathEvaluator()
+{}
 
 double MathEvaluator::calculate(const double x)
 {

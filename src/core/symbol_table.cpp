@@ -1,6 +1,6 @@
-#include "include/symbol_table.h"
+#include "symbol_table.h"
 
-#include "include/symbol_exception.h"
+#include "symbol_exception.h"
 
 void SymbolTable::insertSymbol(const std::string& Name,
 	const std::regex& rgx,

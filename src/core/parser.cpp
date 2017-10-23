@@ -1,4 +1,4 @@
-#include "include/parser.h"
+#include "parser.h"
 
 std::unique_ptr<Node> Parser::parse(const Precedence min_prec)
 {

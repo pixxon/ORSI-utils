@@ -1,4 +1,4 @@
-#include "include/tree_printer.h"
+#include "tree_printer.h"
 
 std::string TreePrinter::toString(const Node& Root)
 {
