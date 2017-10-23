@@ -8,6 +8,7 @@ Using this library is simple, you can build it using CMake.
 1. Download or clone the repository then navigate to the build directory.
 ```bash
 cmake .
+make all -j4
 ```
 2. Copy the **libEvaluator** to the desired location with the required header(s) found in **include**. ( Most likely will be next to your main.cpp. )  
 Reference main.cpp:
