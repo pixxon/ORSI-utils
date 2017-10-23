@@ -1,4 +1,8 @@
-#include "math_evaluator.h"
+#include "include/math_evaluator.h"
+
+#include "include/symbol_table.h"
+#include "include/tokenizer.h"
+#include "include/parser.h"
 
 MathEvaluator::MathEvaluator(const std::string& Input)
 {

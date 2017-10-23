@@ -1,6 +1,6 @@
-#include "tokenizer.h"
+#include "include/tokenizer.h"
 
-#include "parser_exception.h"
+#include "include/parser_exception.h"
 
 void Tokenizer::next()
 {

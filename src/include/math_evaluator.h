@@ -1,9 +1,9 @@
 #pragma once
 
-#include "core/symbol_table.h"
-#include "core/tokenizer.h"
-#include "core/parser.h"
-#include "core/evaluator.h"
+#include <string>
+#include <memory>
+
+#include "evaluator.h"
 
 struct MathEvaluator
 {
