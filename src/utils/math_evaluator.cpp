@@ -5,6 +5,8 @@
 #include "core/parser.h"
 #include "core/evaluator.h"
 
+#include <cmath>
+
 MathEvaluator::MathEvaluator(const std::string& Input)
 {
 	SymbolTable table;
@@ -17,14 +19,14 @@ MathEvaluator::MathEvaluator(const std::string& Input)
 	table.insertSymbol("min", std::regex("^-"), Arity::MULTI, Associativity::LEFT, 1, [](double a, double b){ return a - b; });
 	table.insertSymbol("mul", std::regex("^\\*"), Arity::BINARY, Associativity::LEFT, 2, [](double a, double b){ return a * b; });
 	table.insertSymbol("div", std::regex("^/"), Arity::BINARY, Associativity::LEFT, 2, [](double a, double b){ return a / b; });
-	table.insertSymbol("pow", std::regex("^\\^"), Arity::BINARY, Associativity::RIGHT, 3, [](double a, double b){ return pow(a, b); });
+	table.insertSymbol("pow", std::regex("^\\^"), Arity::BINARY, Associativity::RIGHT, 3, [](double a, double b){ return std::pow(a, b); });
 	
 	table.insertSymbol("abs", std::regex("^abs"), Arity::UNARY, Associativity::NONE, 0, [](double a, double){ return a<0?-a:a; });
 	
-	table.insertSymbol("sin", std::regex("^sin"), Arity::UNARY, Associativity::NONE, 0, [](double a, double){ return sin(a); });
-	table.insertSymbol("cos", std::regex("^cos"), Arity::UNARY, Associativity::NONE, 0, [](double a, double){ return cos(a); });
-	table.insertSymbol("tg", std::regex("^tg"), Arity::UNARY, Associativity::NONE, 0, [](double a, double){ return tan(a); });
-	table.insertSymbol("ctg", std::regex("^ctg"), Arity::UNARY, Associativity::NONE, 0, [](double a, double){ return 1 / tan(a); });
+	table.insertSymbol("sin", std::regex("^sin"), Arity::UNARY, Associativity::NONE, 0, [](double a, double){ return std::sin(a); });
+	table.insertSymbol("cos", std::regex("^cos"), Arity::UNARY, Associativity::NONE, 0, [](double a, double){ return std::cos(a); });
+	table.insertSymbol("tg", std::regex("^tg"), Arity::UNARY, Associativity::NONE, 0, [](double a, double){ return std::tan(a); });
+	table.insertSymbol("ctg", std::regex("^ctg"), Arity::UNARY, Associativity::NONE, 0, [](double a, double){ return 1 / std::tan(a); });
 
 	Tokenizer tokenizer(table, Input);
 	Parser parser(tokenizer);
