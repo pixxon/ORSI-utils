@@ -12,3 +12,6 @@ ADD_LIBRARY(Evaluator STATIC /
 	../src/core/evaluator.cpp /
 	../src/core/tree_printer.cpp /
 	../src/utils/math_evaluator.cpp)
+
+ADD_LIBRARY(BMPWriter STATIC /
+	../src/utils/bmp_image.cpp)
