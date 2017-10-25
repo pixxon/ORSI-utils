@@ -1,16 +1,15 @@
 # ORSI-utils
 Helper library for ORSI.  
 
-Using this library is simple, you can build it using CMake.
-  
-  
+---  
+## libEvaluator
 0. If you don't have CMake installed with a C++ compiler you should do it now!
 1. Download or clone the repository then navigate to the build directory.
 ```bash
 cmake .
 make all -j4
 ```
-2. Copy the **libEvaluator** to the desired location with the required header(s) found in **include**. ( Most likely will be next to your main.cpp. )  
+2. Copy the **libEvaluator** to the desired location with the required header **math_evaluator.h** found in **include**.  
 Reference main.cpp:
 ```c++
 #include "math_evaluator.h"
@@ -20,7 +19,7 @@ Reference main.cpp:
 int main()
 {
   MathEvaluator evaluator("x+2");
-  std::cout << evaluator.calculate(3);
+  std::cout << evaluator.calculate(3) << std::endl;
   return 0;
 }
 ```
@@ -33,3 +32,5 @@ g++ main.cpp -L . -l Evaluator
 ./a.out
 5
 ```
+
+---
