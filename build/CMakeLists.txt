@@ -15,3 +15,9 @@ ADD_LIBRARY(Evaluator STATIC /
 
 ADD_LIBRARY(BMPWriter STATIC /
 	../src/utils/bmp_image.cpp)
+
+ADD_EXECUTABLE(Tester /
+	../src/main.cpp)
+
+TARGET_LINK_LIBRARIES(Tester
+	Evaluator BMPWriter)
